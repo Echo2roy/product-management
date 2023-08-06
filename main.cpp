@@ -121,6 +121,91 @@ void saveProductToJson(const Product& product) {
     }
 }
 
+// Function to search for a product by name in the JSON file
+void searchProductByName(const std::string& productName) {
+    std::string filename = "products.json";
+    std::ifstream inputFile(filename);
+    if (!inputFile.is_open()) {
+        std::cout << "Error: Unable to open " << filename << " for reading." << std::endl;
+        return;
+    }
+
+    json productJson;
+    inputFile >> productJson;
+    inputFile.close();
+
+    bool found = false;
+    for (const auto& product : productJson) {
+        if (product["name"] == productName) {
+            std::cout << "Result for medication Product in Json Format:" << std::endl;
+            std::cout << product.dump(4) << std::endl;
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        std::cout << "Product not found." << std::endl;
+    }
+}
+
+void searchProductByBrand(const std::string& productBrand) {
+    std::string filename = "products.json";
+    std::ifstream inputFile(filename);
+    if (!inputFile.is_open()) {
+        std::cout << "Error: Unable to open " << filename << " for reading." << std::endl;
+        return;
+    }
+
+    json productJson;
+    inputFile >> productJson;
+    inputFile.close();
+
+    bool found = false;
+    for (const auto& product : productJson) {
+        if (product["brand"] == productBrand) {
+            std::cout << "Result for medication Product in Json Format:" << std::endl;
+            std::cout << product.dump(4) << std::endl;
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        std::cout << "Product not found." << std::endl;
+    }
+}
+
+void searchProductByCategory(const std::string& productCategory) {
+    std::string filename = "products.json";
+    std::ifstream inputFile(filename);
+    if (!inputFile.is_open()) {
+        std::cout << "Error: Unable to open " << filename << " for reading." << std::endl;
+        return;
+    }
+
+    json productJson;
+    inputFile >> productJson;
+    inputFile.close();
+
+    bool found = false;
+    for (const auto& product : productJson) {
+        if (product["category"] == productCategory) {
+            std::cout << "Result for medication Product in Json Format:" << std::endl;
+            std::cout << product.dump(4) << std::endl;
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        std::cout << "Product not found." << std::endl;
+    }
+}
+
 int main() {
 
     //Menu
@@ -180,17 +265,28 @@ int main() {
             case 2:
                 // Search Products By Name
                 // Implement this functionality here...
-                std::cout << "Search Products By Name - Coming Soon!" << std::endl;
+                // Search Products By Name
+                std::cout << "Enter product name to search: ";
+                std::cin.ignore(); // Ignore the newline character from the previous input
+                std::getline(std::cin, name);
+                std::cout << "Searching Text: " << name <<std::endl;
+                searchProductByName(name);
                 break;
             case 3:
-                // Search Products By Brand
-                // Implement this functionality here...
-                std::cout << "Search Products By Brand - Coming Soon!" << std::endl;
+                /// Search Products By Brand
+                std::cout << "Enter product brand to search: ";
+                std::cin.ignore();
+                std::getline(std::cin, brand);
+                std::cout << "Searching Text: " << brand <<std::endl;
+                searchProductByBrand(brand);
                 break;
             case 4:
-                // Search Products By Category
-                // Implement this functionality here...
-                std::cout << "Search Products By Category - Coming Soon!" << std::endl;
+                /// Search Products By Category
+                std::cout << "Enter product category to search: ";
+                std::cin.ignore();
+                std::getline(std::cin, category);
+                std::cout << "Searching Text: " << category <<std::endl;
+                searchProductByCategory(category);
                 break;
             case 5:
                 std::cout << "Exiting..." << std::endl;
@@ -199,17 +295,6 @@ int main() {
                 std::cout << "Invalid choice. Please choose a valid option (1-5)." << std::endl;
         }
     }
-
-    // Accessing attributes using getter methods
-    std::cout << "Product Code: " << product.getCode() << std::endl;
-    std::cout << "Name: " << product.getName() << std::endl;
-    std::cout << "Brand: " << product.getBrand() << std::endl;
-    std::cout << "Description: " << product.getDescription() << std::endl;
-    std::cout << "Dosage Instruction: " << product.getDosageInstruction() << std::endl;
-    std::cout << "Price: $" << std::fixed << std::setprecision(2) << product.getPrice() << std::endl;
-    std::cout << "Quantity: " << product.getQuantity() << std::endl;
-    std::cout << "Category: " << product.getCategory() << std::endl;
-    std::cout << "Requires Prescription: " << std::boolalpha << product.requiresPrescription() << std::endl;
 
     return 0;
 }
