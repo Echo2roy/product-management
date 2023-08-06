@@ -150,6 +150,7 @@ void searchProductByName(const std::string& productName) {
     }
 }
 
+// Function to search for a product by brand in the JSON file
 void searchProductByBrand(const std::string& productBrand) {
     std::string filename = "products.json";
     std::ifstream inputFile(filename);
@@ -162,19 +163,20 @@ void searchProductByBrand(const std::string& productBrand) {
     inputFile >> productJson;
     inputFile.close();
 
-    bool found = false;
-    for (const auto& product : productJson) {
+    std::vector<json> foundProducts;
+    for (const auto &product: productJson) {
         if (product["brand"] == productBrand) {
-            std::cout << "Result for medication Product in Json Format:" << std::endl;
-            std::cout << product.dump(4) << std::endl;
-
-            found = true;
-            break;
+            foundProducts.push_back(product);
         }
     }
 
-    if (!found) {
-        std::cout << "Product not found." << std::endl;
+    if (!foundProducts.empty()) {
+        std::cout << "Products with brand name '" << productBrand << "':" << std::endl;
+        for (const auto &product: foundProducts) {
+            std::cout << product.dump(4) << std::endl;
+        }
+    } else {
+        std::cout << "No products found with brand name '" << productBrand << "'." << std::endl;
     }
 }
 
@@ -190,19 +192,20 @@ void searchProductByCategory(const std::string& productCategory) {
     inputFile >> productJson;
     inputFile.close();
 
-    bool found = false;
-    for (const auto& product : productJson) {
+    std::vector<json> foundProducts;
+    for (const auto &product: productJson) {
         if (product["category"] == productCategory) {
-            std::cout << "Result for medication Product in Json Format:" << std::endl;
-            std::cout << product.dump(4) << std::endl;
-
-            found = true;
-            break;
+            foundProducts.push_back(product);
         }
     }
 
-    if (!found) {
-        std::cout << "Product not found." << std::endl;
+    if (!foundProducts.empty()) {
+        std::cout << "Products with category name '" << productCategory << "':" << std::endl;
+        for (const auto &product: foundProducts) {
+            std::cout << product.dump(4) << std::endl;
+        }
+    } else {
+        std::cout << "No products found with category name '" << productCategory << "'." << std::endl;
     }
 }
 

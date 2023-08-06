@@ -20,5 +20,16 @@
         "price": 33.0,
         "quantity": 44,
         "requires_prescription": false
+    },
+    {
+        "brand": "wwwww",
+        "category": "skdnk",
+        "code": "g2uvWTHfifyFnqcgerxMTt63ZfKqBRkT",
+        "description": "sndunksd",
+        "dosage_instruction": "",
+        "name": "asdsds",
+        "price": 77.0,
+        "quantity": 5,
+        "requires_prescription": false
     }
 ]
