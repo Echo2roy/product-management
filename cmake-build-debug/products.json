@@ -1,0 +1,24 @@
+[
+    {
+        "brand": "jdskjsjd",
+        "category": "dksodmodsd",
+        "code": "S25Yqj0m6MfiEg9w7fdr0xhnMIrXAAGP",
+        "description": "dksjd",
+        "dosage_instruction": "",
+        "name": "jkjsk dj",
+        "price": 33.0,
+        "quantity": 3,
+        "requires_prescription": false
+    },
+    {
+        "brand": "wwwww",
+        "category": "wwwwwwwwww",
+        "code": "S25Yqj0m6MfiEg9w7fdr0xhnMIrXAAGP",
+        "description": "wwwwwww",
+        "dosage_instruction": "",
+        "name": "wwwwwww",
+        "price": 33.0,
+        "quantity": 44,
+        "requires_prescription": false
+    }
+]
