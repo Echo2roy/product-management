@@ -31,5 +31,16 @@
         "price": 77.0,
         "quantity": 5,
         "requires_prescription": false
+    },
+    {
+        "brand": "Jam",
+        "category": "Jam-de",
+        "code": "8Ujzpfms6nrdbpkZQDfqKnH0xZWV1MVd",
+        "description": "de-maga",
+        "dosage_instruction": "",
+        "name": "Jam-de-maga",
+        "price": 32.0,
+        "quantity": 8,
+        "requires_prescription": true
     }
 ]

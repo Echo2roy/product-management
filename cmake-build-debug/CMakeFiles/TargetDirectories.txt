@@ -1,3 +1,3 @@
-/home/echo-roy/CLionProjects/trial/cmake-build-debug/CMakeFiles/trial.dir
-/home/echo-roy/CLionProjects/trial/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/echo-roy/CLionProjects/trial/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/echo-roy/CLionProjects/product-management/cmake-build-debug/CMakeFiles/trial.dir
+/home/echo-roy/CLionProjects/product-management/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/echo-roy/CLionProjects/product-management/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -231,6 +231,8 @@ int main() {
         std::cin >> choice;
 
         switch (choice) {
+
+            // Add Products
             case 1:
                 std::cout << "Enter the name of the product: ";
                 std::cin.ignore(); // Ignore the newline character from the previous input
@@ -266,8 +268,7 @@ int main() {
                 std::cout << "Product added successfully!" << std::endl;
                 break;
             case 2:
-                // Search Products By Name
-                // Implement this functionality here...
+
                 // Search Products By Name
                 std::cout << "Enter product name to search: ";
                 std::cin.ignore(); // Ignore the newline character from the previous input
@@ -276,7 +277,7 @@ int main() {
                 searchProductByName(name);
                 break;
             case 3:
-                /// Search Products By Brand
+                // Search Products By Brand
                 std::cout << "Enter product brand to search: ";
                 std::cin.ignore();
                 std::getline(std::cin, brand);
@@ -284,7 +285,7 @@ int main() {
                 searchProductByBrand(brand);
                 break;
             case 4:
-                /// Search Products By Category
+                // Search Products By Category
                 std::cout << "Enter product category to search: ";
                 std::cin.ignore();
                 std::getline(std::cin, category);
@@ -298,6 +299,4 @@ int main() {
                 std::cout << "Invalid choice. Please choose a valid option (1-5)." << std::endl;
         }
     }
-
-    return 0;
 }
